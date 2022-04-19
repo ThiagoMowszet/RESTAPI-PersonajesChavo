@@ -6,4 +6,3 @@ personajes = [
     {"Nombre": "Doña Florinda", "Edad": 43, "NumeroVecindad": 14},
     {"Nombre": "Señor Barriga", "Edad": 40, "NumeroVecindad": "Todas"}
 ]
-

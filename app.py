@@ -49,5 +49,18 @@ def getPersonaje(personaje_name):
     return jsonify({"message": "Personaje no encontrado"})
 
 
+
+
+@app.route('/personajes/<string:personaje_name>', methods=['DELETE'])
+def deletePersonaje(personaje_name):
+    personajeFound = [personaje for personaje in personajes if personaje['Nombre'] == personaje_name]
+    if len(personajeFound) > 0:
+        personajes.remove(personajeFound[0])
+        return jsonify({
+            "message": "Producto eliminado",
+            "personaje": personajes
+        })
+    return jsonify({"message": "Personaje no encontrado"})
+
 if __name__ == '__main__':
     app.run(debug=True, port=4000)
